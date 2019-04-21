@@ -15,7 +15,9 @@
 const integerPairs = (arr, total) => {
   let pairs = [];
   let hashTable = {};
-
+  if (arr.length <= 1) {
+    return pairs;
+  }
   for (let i = 0; i < arr.length; i++) {
     let difference = total - arr[i];
     if (hashTable[difference] !== undefined) {
@@ -30,12 +32,12 @@ const integerPairs = (arr, total) => {
 console.log(integerPairs([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 11));
 
 // const integerPairs = (arr, total) => {
-  // let pairs = [];
-  // for (let i = 0; i < arr.length/2; i++) {
-  //     for (let j = 1; j < arr.length; j++) {
-  //         if(arr[i] + arr[j] == total) {
-  //             pairs.push([arr[i], arr[j]])
-  //         }
-  //     }
-  // } return pairs;
+// let pairs = [];
+// for (let i = 0; i < arr.length/2; i++) {
+//     for (let j = 1; j < arr.length; j++) {
+//         if(arr[i] + arr[j] == total) {
+//             pairs.push([arr[i], arr[j]])
+//         }
+//     }
+// } return pairs;
 // };
