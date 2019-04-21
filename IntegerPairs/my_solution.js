@@ -12,14 +12,14 @@
 
 // Analyze the time and space complexity of your solution.
 
-const integerPairs = (arr, total) => {
+const integerPairs = (arr, k) => {
   let pairs = [];
   let hashTable = {};
   if (arr.length <= 1) {
     return pairs;
   }
   for (let i = 0; i < arr.length; i++) {
-    let difference = total - arr[i];
+    let difference = k - arr[i];
     if (hashTable[difference] !== undefined) {
       pairs.push([arr[i], difference]);
     }
